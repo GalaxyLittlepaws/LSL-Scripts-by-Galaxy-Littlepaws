@@ -6,7 +6,7 @@ default
 {
     state_entry()
     {
-        llSetText("", ZERO_VECTOR, 0); // Removes the floating text
+        llSetText("", <((float)0), ((float)0), ((float)0)>, 0); // Removes the floating text
         llSleep(3); // Wait 3 seconds to ensure it went through
         llRemoveInventory(llGetScriptName()); // Remove self from object
     }
