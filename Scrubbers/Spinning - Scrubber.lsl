@@ -6,8 +6,8 @@ default
 {
     state_entry()
     {
-        llTargetOmega(<0,0,0>, 0, 0); // No spinning!
-        llSleep(3); //Wait 3 seconds to ensure it went through
-        llRemoveInventory(llGetScriptName()); // Remove self from object
+        llTargetOmega(<((float)0), ((float)0), ((float)0)>, 0, 0); // No spinning
+        llSleep(3); // Wait a bit to be sure it worked
+        llRemoveInventory(llGetScriptName()); // Remove self from the object
     }
 }
