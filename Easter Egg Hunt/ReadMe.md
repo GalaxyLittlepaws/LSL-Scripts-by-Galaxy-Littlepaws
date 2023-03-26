@@ -36,12 +36,8 @@ The 'Egg' script is attached to the game objects that you want to be the eggs. I
 
 The API script is the script that you will need to edit to change the settings of the game. It is the script that you will need to attach to the game object that you want to be the 'Egg Hunt' object. You will need to edit the following variables:
 
-* `Egg Hunt Name` - This is the name of the egg hunt. It will be used in the chat messages.
-* `Egg Hunt Message` - This is the message that will be sent to the user when they find an egg.
-* `Egg Hunt Complete Message` - This is the message that will be sent to the user when they have found all the eggs.
-* `Egg Hunt Complete Reward` - This is the reward that will be given to the user when they have found all the eggs.
-* `API Key` - This is the API key that will be used to communicate with the API.
-* `API URL` - This is the URL of the API. This is what will be getting messages, and responding as you have programmed.
+* `apiKey` - This is the API key that will be used to communicate with the API.
+* `apiURL` - This is the URL of the API. This is what will be getting messages, and responding as you have programmed.
 
 ## Anti-cheating
 
