@@ -32,6 +32,12 @@ The 'Egg' script is attached to the game objects that you want to be the eggs. I
 
 ## How to edit
 
+You can edit these variables in Main:
+
+* `points` - This is the amount of points that the egg is worth. If you're not using points, keep it at 0.
+* `needGroup` - This is a boolean that will determine if the egg needs to be found by someoen wearing the group tag of the rezzed egg.
+* `agentRange` - This is the distance that the user needs to be from the egg to be able to see and click on it. This is to prevent cheating by camming.
+
 ### API
 
 The API script is the script that you will need to edit to change the settings of the game. It is the script that you will need to attach to the game object that you want to be the 'Egg Hunt' object. You will need to edit the following variables:
@@ -42,3 +48,6 @@ The API script is the script that you will need to edit to change the settings o
 ## Anti-cheating
 
 The system has anti-cheating built in. It will not allow a user to click on an egg if the user is not in sight of it or within a certain distance. The name of the egg prim is randomized after an amount of time. This is to prevent users from cheating by using the 'Area Search' feature, or by camming. This encourages exploration and makes it more fun.
+
+Thank you to Animats for his code I used for the "is the avatar actually looking at this?" anti-cheat. When re-using this code, please be mindful of his licensing. You cannot sell this code or use this code in something you plan to sell.
+https://github.com/John-Nagle/lslutils/blob/master/touchtester.lsl
