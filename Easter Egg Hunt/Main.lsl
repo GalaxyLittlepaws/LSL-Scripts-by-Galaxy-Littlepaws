@@ -19,17 +19,19 @@ sendToAPI() {
 default {
     state_entry() {
         llSetClickAction(CLICK_ACTION_NONE);
-        llSensor("", NULL_KEY, AGENT, agentRange, PI);
+        llSensorRepeat("", NULL_KEY, AGENT, agentRange, PI, 1.0);
     }
 
-    sensor(integer detected) {
-        if (detected > 0) {
-            llSetClickAction(CLICK_ACTION_TOUCH); // Only allow clicking on the prim if there is an avatar in range.
-            llSetLinkAlpha(LINK_SET, 1.0, ALL_SIDES); // Make the prim visible if there is an avatar in range.
-        } else {
-            llSetClickAction(CLICK_ACTION_NONE);
-            llSetLinkAlpha(LINK_SET, 0.0, ALL_SIDES);
+    sensor(integer i) {
+        if (i > 0) {
+            llSetClickAction(CLICK_ACTION_TOUCH); // Enable clicking on the prim if there are avatars in range.
+            llSetLinkAlpha(LINK_SET, 1.0, ALL_SIDES); // Make the prim visible if there are avatars in range.
         }
+    }
+
+    no_sensor() {
+        llSetClickAction(CLICK_ACTION_NONE); // Disable clicking on the prim if there are no avatars in range.
+        llSetLinkAlpha(LINK_SET, 0.0, ALL_SIDES); // Make the prim invisible if there are no avatars in range.
     }
 
     touch_start(integer total_number) {
