@@ -26,9 +26,11 @@ You can easily hook it into your own game, or use it as a standalone.
 
 ## How it works
 
-The system works by having a 'master' script that is attached to the game object that you want to be the 'Egg Hunt' object. This script is the 'API' script. It will keep track of all the eggs that are in the game, and will keep track of who has found them.
+The 'Main' script is put inside the game objects that you want to be the eggs. It will give out the prozes, and optionally send a message to the 'API' script when it is found.
 
-The 'Egg' script is attached to the game objects that you want to be the eggs. It will keep track of who has found it, and will send a message to the 'API' script when it is found.
+The 'API' script is put inside the game object that you want to be the 'Egg Hunt' object. It will receive messages from the 'Main' script, and will send messages to the external API and/or HUD object.
+
+The player will need to optionally put on the HUD/basket etc. and then wander around to touch the eggs to find them. The player will need to have nothing between them and the egg, and be within a certain range for it to be touchable and visible.
 
 ## How to edit
 
@@ -47,7 +49,4 @@ The API script is the script that you will need to edit to change the settings o
 
 ## Anti-cheating
 
-The system has anti-cheating built in. It will not allow a user to click on an egg if the user is not in sight of it or within a certain distance. The name of the egg prim is randomized after an amount of time. This is to prevent users from cheating by using the 'Area Search' feature, or by camming. This encourages exploration and makes it more fun.
-
-Thank you to Animats for his code I used for the "is the avatar actually looking at this?" anti-cheat. When re-using this code, please be mindful of his licensing. You cannot sell this code or use this code in something you plan to sell.
-https://github.com/John-Nagle/lslutils/blob/master/touchtester.lsl
+The system has anti-cheating built in. It will not allow a user to click on an egg if the user is not within a certain distance. The name of the egg prim is randomized after an amount of time. This is to prevent users from cheating by using the 'Area Search' feature, or by camming. This encourages exploration and makes it more fun.
